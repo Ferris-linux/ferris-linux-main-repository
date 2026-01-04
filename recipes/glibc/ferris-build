@@ -9,7 +9,7 @@ url="https://ftpmirror.gnu.org/libc/glibc-2.42.tar.gz"
 configure() {
     mkdir -p glibc-build
     cd glibc-build
-    ../configure --prefix="/usr"
+    ../configure --prefix="/usr" --disable-debug --disable-nls --disable-profile
 }
 
 build() {
@@ -19,11 +19,14 @@ build() {
 
 install() {
     cd glibc-build
-    make install DESTDIR="$1"
+    make install-strip DESTDIR="$1"
     cd "$1"
     ln -s usr/lib lib
     ln -s usr/lib lib64
     ln -s usr/bin bin
 }
+
+export CFLAGS="-O2"
+export CXXFLAGS="$CFLAGS"
 
 start_installation "$1" "$url"
