@@ -4,7 +4,7 @@
 
 . "$2"
 
-url="https://ftp.gnu.org/gnu/libc/glibc-2.42.tar.gz"
+url="https://mirror.dogado.de/gnu/libc/glibc-2.42.tar.gz"
 
 configure() {
     mkdir -p glibc-build
@@ -21,9 +21,9 @@ install() {
     cd glibc-build
     make install DESTDIR="$1"
     cd "$1"
-    ln -sf usr/lib lib
-    ln -sf usr/lib lib64
-    ln -sf usr/bin bin
+    ln -s usr/lib lib
+    ln -s usr/lib lib64
+    ln -s usr/bin bin
 }
 
 start_installation "$1" "$url"
