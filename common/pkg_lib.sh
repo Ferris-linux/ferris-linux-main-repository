@@ -6,7 +6,7 @@ start_installation() {
     dir_name=$(tar -tf "$archive_name" | head -1 | cut -f1 -d"/")
     tar -xf "$archive_name"
     current_dir="$(realpath .)"
-    dirnamerealpath="$(realpath dir_name)"
+    dirnamerealpath="$(realpath $dir_name)"
     cd "$dirnamerealpath"
     "configure" "$1"
     cd "$dirnamerealpath"
