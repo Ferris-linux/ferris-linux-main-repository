@@ -1,0 +1,21 @@
+#!/bin/sh
+
+# $1 - dest, all packages are defaulted to /usr , $2 - sh file which include all functions
+
+. "$2"
+
+url="https://ftp.gnu.org/gnu/libc/glibc-2.42.tar.gz"
+
+configure() {
+    ./configure --prefix="/usr"
+}
+
+build() {
+    make -j$(nproc)
+}
+
+install() {
+    make install DESTDIR="$1"
+}
+
+start_installation "$1" "$url"
