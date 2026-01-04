@@ -19,7 +19,7 @@ build() {
 
 install() {
     cd glibc-build
-    make install-strip DESTDIR="$1"
+    make install DESTDIR="$1"
     cd "$1"
     ln -s usr/lib lib
     ln -s usr/lib lib64

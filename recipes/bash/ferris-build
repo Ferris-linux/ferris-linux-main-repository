@@ -13,7 +13,7 @@ build() {
 }
 
 install() {
-    make install-strip DESTDIR="$1"
+    make install DESTDIR="$1"
 }
 
 export CFLAGS="-O2"
