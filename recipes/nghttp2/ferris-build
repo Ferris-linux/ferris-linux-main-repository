@@ -5,10 +5,7 @@
 url="https://github.com/nghttp2/nghttp2/releases/download/v1.68.0/nghttp2-1.68.0.tar.gz"
 
 configure() {
-    ./configure \
-        --prefix="/usr" \
-        --disable-static \
-        --enable-shared 
+    ./configure --prefix="/usr" --disable-static --enable-shared
 }
 
 build() {
@@ -16,7 +13,7 @@ build() {
 }
 
 install() {
-    make install DESTDIR="$1"
+    make DESTDIR="$1" install
 }
 
 export CFLAGS="-O2"

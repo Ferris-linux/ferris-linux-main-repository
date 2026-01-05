@@ -19,7 +19,7 @@ build() {
 
 install() {
     cd glibc-build
-    make install DESTDIR="$1"
+    make DESTDIR="$1" install
     cd "$1"
     rm -rf lib bin
     echo "Creating symlinks"

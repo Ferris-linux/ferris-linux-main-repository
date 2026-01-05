@@ -19,7 +19,7 @@ build() {
 }
 
 install() {
-    make install_sw DESTDIR="$1"
+    make DESTDIR="$1" install_sw
 }
 
 export CFLAGS="-O2"

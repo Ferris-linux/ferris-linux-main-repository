@@ -1,0 +1,5 @@
+{
+    "name": "xz",
+    "version": "5.8.2",
+    "deps": ["glibc", "bash"]
+}

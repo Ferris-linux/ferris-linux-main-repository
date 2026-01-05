@@ -1,0 +1,23 @@
+#!/bin/sh
+
+. "$2"
+
+url="https://sourceware.org/pub/bzip2/bzip2-1.0.8.tar.gz"
+
+configure() {
+    :
+}
+
+build() {
+    make -j$(nproc)
+    cc -shared -Wl,-soname,libbz2.so.1.0 -o libbz2.so.1.0 blocksort.o huffman.o crctable.o randtable.o compress.o decompress.o bzlib.o
+}
+
+install() {
+    make PREFIX=/usr DESTDIR="$1" install
+}
+
+export CFLAGS="-O2 -fPIC"
+export CXXFLAGS="$CFLAGS"
+
+start_installation "$1" "$url"

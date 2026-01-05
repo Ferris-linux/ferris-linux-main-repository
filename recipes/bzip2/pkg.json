@@ -1,0 +1,5 @@
+{
+    "name": "bzip2",
+    "version": "1.0.8",
+    "deps": ["glibc", "bash"]
+}

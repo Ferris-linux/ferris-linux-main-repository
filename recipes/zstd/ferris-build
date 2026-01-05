@@ -1,0 +1,22 @@
+#!/bin/sh
+
+. "$2"
+
+url="https://github.com/facebook/zstd/releases/download/v1.5.7/zstd-1.5.7.tar.gz"
+
+configure() {
+    :
+}
+
+build() {
+    make -j$(nproc)
+}
+
+install() {
+    make DESTDIR="$1" PREFIX=/usr install
+}
+
+export CFLAGS="-O2 -fPIC"
+export CXXFLAGS="$CFLAGS"
+
+start_installation "$1" "$url"

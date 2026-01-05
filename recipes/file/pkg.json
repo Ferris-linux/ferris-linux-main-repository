@@ -1,0 +1,5 @@
+{
+    "name": "file",
+    "version": "5.46",
+    "deps": ["glibc", "zlib", "libseccomp", "bzip2", "xz", "zstd"]
+}
