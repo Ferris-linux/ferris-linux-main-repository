@@ -1,0 +1,22 @@
+#!/bin/sh
+
+. "$2"
+
+url="https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.18.3.tar.xz"
+
+configure() {
+    make defconfig
+}
+
+build() {
+    make -j$(nproc)
+}
+
+install() {
+    make INSTALL_PATH="$1" install
+}
+
+export CFLAGS="-O2"
+export CXXFLAGS="$CFLAGS"
+
+start_installation "$1" "$url"
