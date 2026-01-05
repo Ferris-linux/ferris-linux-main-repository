@@ -21,11 +21,10 @@ install() {
     cd glibc-build
     make install DESTDIR="$1"
     cd "$1"
-    rm -rf lib lib64 bin
+    rm -rf lib bin
     echo "Creating symlinks"
     mkdir -p usr/lib
     ln -sf usr/lib lib
-    ln -sf usr/lib64 lib64
     ln -sf usr/bin bin
 }
 
