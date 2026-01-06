@@ -1,0 +1,5 @@
+{
+	"name": "wget",
+	"version": "1.25.0",
+	"deps": ["glibc", "openssl", "zlib", "libdin2", "ca-certificates"]
+}
