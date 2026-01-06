@@ -1,0 +1,5 @@
+{
+    "name": "gnu_coreutils",
+    "version": "9.9",
+    "deps": ["glibc"]
+}
