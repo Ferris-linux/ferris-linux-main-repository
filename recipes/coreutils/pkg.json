@@ -1,5 +1,6 @@
 {
     "name": "coreutils",
     "version": "0.5.0",
-    "deps": ["glibc"]
+    "deps": ["glibc"],
+    "also_deps": ["gcc-libs", "oniguruma"]
 }

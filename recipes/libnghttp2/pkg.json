@@ -1,5 +1,5 @@
 {
-    "name": "nghttp2",
+    "name": "libnghttp2",
     "version": "1.68.0",
     "deps": ["glibc"]
 }

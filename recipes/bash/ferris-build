@@ -5,7 +5,10 @@
 url="https://ftp.gnu.org/gnu/bash/bash-5.3.tar.gz"
 
 configure() {
-    ./configure --prefix="/usr" --without-bash-malloc --disable-readline --with-curses 
+    export CPPFLAGS="-I/usr/include"
+    export LDFLAGS="-L/usr/lib"
+
+    ./configure --prefix="/usr" --without-bash-malloc --with-installed-readline
 }
 
 build() {
@@ -14,10 +17,10 @@ build() {
 
 install() {
     make DESTDIR="$1" install
-    cd "$1/usr/bin"
-    ln -s bash sh
+    ln -sf bash "$1/usr/bin/sh"
 }
 
 export CFLAGS="-O2"
 export CXXFLAGS="$CFLAGS"
+
 start_installation "$1" "$url"

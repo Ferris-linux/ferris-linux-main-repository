@@ -1,5 +1,5 @@
 {
-    "name": "unistring",
+    "name": "libunistring",
     "version": "1.4.1",
     "deps": ["glibc"]
 }

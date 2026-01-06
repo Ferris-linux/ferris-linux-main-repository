@@ -1,5 +1,5 @@
 {
     "name": "nano",
     "version": "8.7",
-    "deps": ["glibc","ncurses", "file", "zlib"]
+    "deps": ["glibc","ncurses", "file"]
 }

@@ -1,5 +1,6 @@
 {
     "name": "libcap",
     "version": "2.77",
-    "deps": ["glibc"]
+    "deps": ["glibc"],
+    "also_deps": ["pam"]
 }

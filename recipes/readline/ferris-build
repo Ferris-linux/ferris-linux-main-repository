@@ -2,10 +2,10 @@
 
 . "$2"
 
-url="https://github.com/mirror/ncurses/archive/refs/tags/v6.4.tar.gz"
+url="https://ftp.gnu.org/gnu/readline/readline-8.3.tar.gz"
 
 configure() {
-    ./configure --prefix="/usr" --with-shared --without-normal --enable-widec --with-versioned-syms
+    ./configure --prefix="/usr" --disable-static --enable-shared
 }
 
 build() {
@@ -15,7 +15,6 @@ build() {
 install() {
     make DESTDIR="$1" install
 }
-
 export CFLAGS="-O2"
 export CXXFLAGS="$CFLAGS"
 

@@ -1,0 +1,22 @@
+#!/bin/sh
+
+. "$2"
+
+url="https://github.com/lz4/lz4/releases/download/v1.10.0/lz4-1.10.0.tar.gz"
+
+configure() {
+    :
+}
+
+build() {
+    make -j$(nproc)
+}
+
+install() {
+    make PREFIX=/usr DESTDIR="$1" install
+}
+
+export CFLAGS="-O2"
+export CXXFLAGS="$CFLAGS"
+
+start_installation "$1" "$url"

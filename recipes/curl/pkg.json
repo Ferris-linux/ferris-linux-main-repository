@@ -1,5 +1,6 @@
 {
     "name": "curl",
     "version": "8.17.0",
-    "deps": ["glibc", "openssl", "zlib", "libidn2","nghttp2"]
+    "deps": ["glibc", "openssl", "zlib", "libidn2","libnghttp2", "ca-certificates", "zstd"],
+    "also_deps": ["brotli", "libssh2", "libpsl", "libnghttp3", "krb5"]
 }

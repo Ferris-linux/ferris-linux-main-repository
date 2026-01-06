@@ -1,5 +1,6 @@
 {
     "name": "zstd",
     "version": "1.5.7",
-    "deps": ["glibc", "zlib", "xz"]
+    "deps": ["glibc", "zlib", "xz", "lz4"],
+    "also_deps": ["gcc-libs"]
 }

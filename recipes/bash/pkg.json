@@ -1,5 +1,6 @@
 {
     "name": "bash",
     "version": "5.3",
-    "deps": ["glibc"]
+    "deps": ["glibc", "readline", "ncurses"],
+    "also_deps": ["bash-completion"]
 }

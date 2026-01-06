@@ -1,5 +1,6 @@
 {
     "name": "gnu_coreutils",
     "version": "9.9",
-    "deps": ["glibc"]
+    "deps": ["glibc", "libcap", "openssl"],
+    "also_deps": ["gmp", "attr", "acl"]
 }

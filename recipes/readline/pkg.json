@@ -1,0 +1,5 @@
+{
+    "name": "readline",
+    "version": "8.3",
+    "deps": ["glibc", "ncurses"]
+}
