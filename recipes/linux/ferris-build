@@ -5,16 +5,16 @@
 url="https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.18.3.tar.xz"
 
 configure() {
-    make defconfig
-    rm -rf .config
-    cp -rf "$script_dir/ferris_linux_config" ".config"
+    patch -p1 < "$script_dir/linux.diff"
 }
 
 build() {
+    KBUILD_CFLAGS += -Wno-error
     make -j$(nproc)
 }
 
 install() {
+    KBUILD_CFLAGS += -Wno-error
     make INSTALL_PATH="$1/boot" install -j$(nproc)
 }
 
