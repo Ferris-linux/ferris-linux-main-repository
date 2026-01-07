@@ -9,11 +9,11 @@ configure() {
 }
 
 build() {
-    make PROFILE=release-fast CARGOFLAGS="--target x86_64-unknown-linux-musl"
+    make PROFILE=release-fast
 }
 
 install() {
-    make PROFILE=release-fast CARGOFLAGS="--target x86_64-unknown-linux-musl" DESTDIR="$1" install
+    make PROFILE=release-fast DESTDIR="$1" install
 }
 
 export CFLAGS="-O2"
