@@ -5,15 +5,17 @@
 url="https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.18.3.tar.xz"
 
 configure() {
-    cp -rf "$script_dir/.config" ".config"
+    make defconfig
+    rm -rf .config
+    cp -rf "$script_dir/ferris_linux_config" ".config"
 }
 
 build() {
-    yes | make -j$(nproc)
+    make -j$(nproc)
 }
 
 install() {
-    yes | make INSTALL_PATH="$1/boot" install -j$(nproc)
+    make INSTALL_PATH="$1/boot" install -j$(nproc)
 }
 
 export CFLAGS="-O2"
