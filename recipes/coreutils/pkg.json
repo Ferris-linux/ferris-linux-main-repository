@@ -1,6 +1,6 @@
 {
     "name": "coreutils",
-    "version": "0.5.0",
-    "deps": ["glibc"],
-    "also_deps": ["gcc-libs", "oniguruma"]
+    "version": "9.9",
+    "deps": ["glibc", "libcap", "openssl"],
+    "also_deps": ["gmp", "attr", "acl"]
 }

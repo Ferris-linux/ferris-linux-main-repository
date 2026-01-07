@@ -2,18 +2,18 @@
 
 . "$2"
 
-url="https://github.com/uutils/coreutils/archive/refs/tags/0.5.0.tar.gz"
+url="https://ftp.gnu.org/gnu/coreutils/coreutils-9.9.tar.gz"
 
 configure() {
-    :
+    ./configure --prefix="/usr" --disable-static --enable-shared
 }
 
 build() {
-    make PROFILE=release-fast -j$(nproc)
+    make -j$(nproc)
 }
 
 install() {
-    make PROFILE=release-fast DESTDIR="$1" install -j$(nproc)
+    make DESTDIR="$1" install
 }
 
 export CFLAGS="-O2"

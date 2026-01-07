@@ -1,0 +1,6 @@
+{
+    "name": "uutils-coreutils",
+    "version": "0.5.0",
+    "deps": ["glibc"],
+    "also_deps": ["gcc-libs", "oniguruma"]
+}
