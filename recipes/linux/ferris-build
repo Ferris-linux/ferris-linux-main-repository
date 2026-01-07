@@ -5,7 +5,7 @@
 url="https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.18.3.tar.xz"
 
 configure() {
-    cp "$script_dir/.config" ".config"
+    cp -rf "$script_dir/.config" ".config"
 }
 
 build() {
