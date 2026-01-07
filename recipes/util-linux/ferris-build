@@ -1,0 +1,24 @@
+#!/bin/sh
+
+. "$2"
+
+url="https://codeload.github.com/util-linux/util-linux/tar.gz/refs/tags/v2.41.3"
+
+configure() {
+    autoreconf -i
+    ./configure \
+        --prefix="/usr"
+}
+
+build() {
+    make -j$(nproc)
+}
+
+install() {
+    make DESTDIR="$1" install -j$(nproc)
+}
+
+export CFLAGS="-O2"
+export CXXFLAGS="$CFLAGS"
+
+start_installation "$1" "$url"

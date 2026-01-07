@@ -1,0 +1,5 @@
+{
+	"name": "util-linux",
+	"version": "2.41.3",
+	"deps": ["glibc"]
+}
