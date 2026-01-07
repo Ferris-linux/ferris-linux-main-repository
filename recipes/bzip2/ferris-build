@@ -14,7 +14,7 @@ build() {
 }
 
 install() {
-    make PREFIX=/usr DESTDIR="$1" install
+    make PREFIX=/usr DESTDIR="$1" install -j$(nproc)
 }
 
 export CFLAGS="-O2 -fPIC"

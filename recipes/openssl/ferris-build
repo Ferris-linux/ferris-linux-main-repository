@@ -19,7 +19,7 @@ build() {
 }
 
 install() {
-    make DESTDIR="$1" install_sw
+    make DESTDIR="$1" install_sw -j$(nproc)
 }
 
 export CFLAGS="-O2"

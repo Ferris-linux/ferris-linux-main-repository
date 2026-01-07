@@ -16,7 +16,7 @@ build() {
 }
 
 install() {
-    make DESTDIR="$1" install
+    make DESTDIR="$1" install -j$(nproc)
     ln -sf bash "$1/usr/bin/sh"
 }
 

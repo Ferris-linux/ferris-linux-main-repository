@@ -13,7 +13,7 @@ build() {
 }
 
 install() {
-    make INSTALL_PATH="$1/boot" install
+    make INSTALL_PATH="$1/boot" install -j$(nproc)
 }
 
 export CFLAGS="-O2"

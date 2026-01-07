@@ -13,7 +13,7 @@ build() {
 }
 
 install() {
-    make DESTDIR="$1" install prefix=/usr
+    make DESTDIR="$1" install prefix=/usr -j$(nproc)
 }
 
 export CFLAGS="-O2"
