@@ -5,7 +5,7 @@
 url="https://codeload.github.com/util-linux/util-linux/tar.gz/refs/tags/v2.41.3"
 
 configure() {
-    autoreconf -i
+    ./autogen.sh
     ./configure \
         --prefix="/usr"
 }
